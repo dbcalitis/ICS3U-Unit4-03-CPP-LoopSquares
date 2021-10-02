@@ -1,7 +1,6 @@
-################################
-# Run Linter against code base #
-################################
-
+###############################################
+# Run GitHub's Super Linter against code base #
+###############################################
 
 name: GitHub's Super Linter
 on: push
@@ -14,13 +13,13 @@ jobs:
 
     steps:
       - name: Check out Git repository
-        uses: github/super-linter@v4
+        uses: actions/checkout@master
      
       - name: Run GitHub Super Linter
-        uses: github/super-linter@v4
+        uses: github/super-linter@master
 
         env:
           VALIDATE_ALL_CODEBASE: true
           VALIDATE_CLANG_FORMAT: false
-          DEFAULT_BRANCH: master
+          DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
